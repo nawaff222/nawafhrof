@@ -1,0 +1,590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ar" dir="rtl"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;لعبة حروف نواف&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&amp;family=Amiri:wght@700&amp;display=swap');</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary-color: #5A9367;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--secondary-color: #D9946C;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--background-color: #F3F7F0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--shadow-color: rgba(0, 0, 0, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-color: #3A4A3D;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--highlight-color: #E8F0EA;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--letter-outline: #2a352c;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: flex-start; /* Changed from center to flex-start */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Tajawal', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--background-color), #E0E8E4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0; /* Adjusted margin */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem; /* Slightly smaller font */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Amiri', 'Tajawal', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 #ccc,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 2px 0 #c9c9c9,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 0 #bbb,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 4px 0 #b9b9b9,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 5px 0 #aaa,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 6px 1px rgba(0,0,0,.1),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 0 5px rgba(0,0,0,.1),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 3px rgba(0,0,0,.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.game-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(8px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0; /* Adjusted margin */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: fit-content; /* Ensure container fits content */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 340px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.row:nth-child(even) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 69.28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: -17.32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #ffffff, #f0f0f0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 6px var(--shadow-color),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 0 8px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-color);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>clip-path: polygon(50% 2%, 98% 26%, 98% 74%, 50% 98%, 2% 74%, 2% 26%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: -1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex .letter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 -1px 0 rgba(0,0,0,0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 rgba(255,255,255,0.8),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 2px 2px rgba(0,0,0,0.2),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 3px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 5px 10px rgba(0, 0, 0, 0.1),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 0 10px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex:hover .letter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 -1px 0 rgba(0,0,0,0.4),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 rgba(255,255,255,0.9),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 3px rgba(0,0,0,0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 5px 5px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex.green {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, var(--primary-color), #4A8357);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 5px 10px rgba(90, 147, 103, 0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 0 10px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex.green .letter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 -1px 0 rgba(0,0,0,0.5),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 rgba(255,255,255,0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 2px 2px rgba(0,0,0,0.4),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 3px rgba(0,0,0,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex.orange {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, var(--secondary-color), #C9845C);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 5px 10px rgba(217, 148, 108, 0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 0 10px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex.orange .letter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 -1px 0 rgba(0,0,0,0.5),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 rgba(255,255,255,0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 2px 2px rgba(0,0,0,0.4),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 3px rgba(0,0,0,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hex.green::before, .hex.orange::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Social media section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-media {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 30px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-platform {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-platform-name {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-account {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Tajawal', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #555;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>direction: ltr;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 5px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 180px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link.twitter:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1DA1F2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link.instagram:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #E1306C;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Falling letters background */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.falling-letters {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.falling-letter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fall linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 -1px 0 rgba(0,0,0,0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.falling-letter.green {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: rgba(90, 147, 103, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.falling-letter.orange {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: rgba(217, 148, 108, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fall {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(-5vh);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(105vh);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.next-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, var(--primary-color), #4A8357);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Tajawal', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 3px 8px rgba(90, 147, 103, 0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 1px 1px rgba(255,255,255,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 -1px 0 rgba(0,0,0,0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 1px 0 rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.next-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 5px 12px rgba(90, 147, 103, 0.4),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 1px 1px rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.next-btn:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(0.98);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>0 2px 5px rgba(90, 147, 103, 0.3),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>inset 0 1px 1px rgba(255,255,255,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Abstract geometric shapes in background */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.geometric-bg {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.geo-shape {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filter: blur(40px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* UI feedback animation */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: scale(1); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: scale(1.3); opacity: 0.8; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: scale(1); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Letter animation */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes letterPopIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: scale(0); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: scale(1); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Font Awesome for social icons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="geometric-bg" id="geometricBg"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="next-btn" id="nextBtn"&gt;التالي&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="game-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;لعبة حروف نواف&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid" id="grid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Social Media Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="social-media"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="social-platform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="social-platform-name"&gt;Twitter/X&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="social-account"&gt;@Nawaf_Alammar1&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://twitter.com/Nawaf_Alammar1" class="social-link twitter" target="_blank"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Visit&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fab fa-twitter social-icon"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="social-platform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="social-platform-name"&gt;Instagram&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="social-account"&gt;@nw.a.f&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://instagram.com/nw.a.f" class="social-link instagram" target="_blank"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Visit&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="fab fa-instagram social-icon"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="falling-letters" id="fallingLetters"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const grid = document.getElementById("grid");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const nextBtn = document.getElementById("nextBtn");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const fallingLettersContainer = document.getElementById('fallingLetters');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const geometricBg = document.getElementById('geometricBg');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const arabicLetters = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let hexElements = [];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Create abstract geometric background shapes</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function createGeometricBackground() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const shapes = 5;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; shapes; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const shape = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>shape.classList.add('geo-shape');</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const size = 100 + Math.random() * 300;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const left = Math.random() * 100;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const top = Math.random() * 100;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>shape.style.width = `${size}px`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>shape.style.height = `${size}px`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>shape.style.left = `${left}%`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>shape.style.top = `${top}%`;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>geometricBg.appendChild(shape);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Initialize game with all 28 letters</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function initGame() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>createGrid();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>createGeometricBackground();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Create the hexagonal grid (5 rows of 5 hexagons)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function createGrid() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>hexElements = [];</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Create 5 rows with 5 hexagons each</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let row = 0; row &lt; 5; row++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const rowDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>rowDiv.classList.add('row');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (row % 2 !== 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>rowDiv.style.marginRight = '30px';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>for (let col = 0; col &lt; 5; col++) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const index = row * 5 + col;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const hex = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hex.classList.add('hex');</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const letterSpan = document.createElement('span');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>letterSpan.classList.add('letter');</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (index &lt; arabicLetters.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>letterSpan.textContent = arabicLetters[index];</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>// Add pop-in animation for initial load</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>letterSpan.style.opacity = '0';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>letterSpan.style.opacity = '1';</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>letterSpan.style.animation = `letterPopIn 0.3s ease-out forwards`;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}, 100 + index * 30);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hex.appendChild(letterSpan);</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hex.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>// Add ripple effect animation</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>const ripple = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.position = 'absolute';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.width = '100%';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.height = '100%';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.backgroundColor = 'rgba(255,255,255,0.3)';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.borderRadius = '50%';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.transform = 'scale(0)';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ripple.style.animation = 'pulse 0.4s ease-out';</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>hex.appendChild(ripple);</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>setTimeout(() =&gt; ripple.remove(), 400);</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>// Change hex state</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (hex.classList.contains('green')) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>hex.classList.remove('green');</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>hex.classList.add('orange');</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>} else if (hex.classList.contains('orange')) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>hex.classList.remove('orange');</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>hex.classList.add('green');</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>rowDiv.appendChild(hex);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>hexElements.push(hex);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>grid.appendChild(rowDiv);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Shuffle letters to new positions with simple animation</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function shuffleLetters() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Simple button click effect</p>
+<p class="p1"><span class="Apple-converted-space">                </span>nextBtn.style.transform = 'scale(0.95)';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>nextBtn.style.transform = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 200);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Create a shuffled copy of the letters</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const shuffledLetters = [...arabicLetters].sort(() =&gt; 0.5 - Math.random());</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Animate grid with simple fade out</p>
+<p class="p1"><span class="Apple-converted-space">                </span>hexElements.forEach((hex, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const letter = hex.querySelector('.letter');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (letter) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>letter.style.opacity = '0';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}, i * 20);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// After fade out, update letters and fade back in</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>hexElements.forEach((hex, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const letter = hex.querySelector('.letter');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (letter &amp;&amp; index &lt; shuffledLetters.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>letter.textContent = shuffledLetters[index];</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>hex.className = 'hex'; // Reset classes</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>letter.style.opacity = '1';</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>letter.style.animation = `letterPopIn 0.3s ease-out forwards`;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}, index * 30);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 300);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Set up event listener for next button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>nextBtn.addEventListener('click', shuffleLetters);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Create falling letters with simple animation</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function createFallingLetter() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const letter = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>letter.classList.add('falling-letter');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Randomly choose between green and orange</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const colorClass = Math.random() &gt; 0.5 ? 'green' : 'orange';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>letter.classList.add(colorClass);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>letter.textContent = arabicLetters[Math.floor(Math.random() * arabicLetters.length)];</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const left = Math.random() * 100;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const animationDuration = 10 + Math.random() * 10;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const fontSize = 16 + Math.random() * 12;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>letter.style.left = `${left}%`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>letter.style.animationDuration = `${animationDuration}s`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>letter.style.fontSize = `${fontSize}px`;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>fallingLettersContainer.appendChild(letter);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Remove letter after animation completes</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>letter.remove();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, animationDuration * 1000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Initialize falling letters</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setInterval(createFallingLetter, 500);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; 15; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(createFallingLetter, Math.random() * 2000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Start the game</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initGame();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
